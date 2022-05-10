@@ -1,0 +1,56 @@
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../assets/fonts/Gilroy/Gilroy-Light.woff') format('woff'), url('../assets/fonts/Gilroy/Gilroy-Light.woff2') format('woff2');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url(../assets/fonts/Gilroy/Gilroy-400.woff) format('woff'), url(../assets/fonts/Gilroy/Gilroy-400.woff2) format('woff2');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url(../assets/fonts/Gilroy/Gilroy-Medium.woff) format('woff'), url(../assets/fonts/Gilroy/Gilroy-Medium.woff2) format('woff2');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url(../assets/fonts/Gilroy/Gilroy-SemiBold.woff) format('woff'), url(../assets/fonts/Gilroy/Gilroy-SemiBold.woff2) format('woff2');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url(../assets/fonts/Gilroy/Gilroy-Bold.woff) format('woff'), url(../assets/fonts/Gilroy/Gilroy-Bold.woff2) format('woff2');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url(../assets/fonts/Gilroy/Gilroy-ExtraBold.woff) format('woff'), url(../assets/fonts/Gilroy/Gilroy-ExtraBold.woff2) format('woff2');
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: 'ZingRustDemo';
+	src: url(../assets/fonts/ZingRustDemo/ZingRustDemo-Base.woff) format('woff'), url(../assets/fonts/ZingRustDemo/ZingRustDemo-Base.woff2) format('woff2');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'ProximaNova';
+	src: url(../assets/fonts/ProximaNova/ProximaNova-Bold.woff) format('woff'), url(../assets/fonts/ProximaNova/ProximaNova-Bold.woff2) format('woff2');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'Icons';
+	src: url('../assets/fonts/Icons/icons.woff') format('woff'), url('../assets/fonts/Icons/icons.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
