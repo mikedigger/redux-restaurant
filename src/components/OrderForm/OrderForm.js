@@ -6,14 +6,12 @@ import { withRestaurantService } from '../hoc'
 import { fetchFormData } from '../../actions';
 import Spinner from '../common/Spinner';
 
-import {
-    ContactInfo,
-    Delivery,
-    Payoff,
-    DeliveryTime,
-    MakeOrder,
-    DeliveryUnavailiable
-} from './OrderFormParts'
+import DeliveryForm from './DeliveryForm';
+import ContactForm from './ContactForm';
+import PayoffForm from './PayoffForm';
+import DeliveryTimeForm from './DeliveryTimeForm';
+import DeliveryUnavailiable from './DeliveryUnavailiable';
+import MakeOrder from './MakeOrder';
 
 const OrderForm = ({ restaurantService, fetchFormData, formData }) => {
 
@@ -26,19 +24,21 @@ const OrderForm = ({ restaurantService, fetchFormData, formData }) => {
 
     const { contact, delivery, payoff, deliveryTime } = formData;
 
-    console.log(delivery)
+    const currentHour = new Date().getHours();
 
-
+    const deliveryAvailiable = currentHour > 21.5 || currentHour < 7 ? <DeliveryUnavailiable /> : null
 
     return (
         <form
             action=""
             className="flex flex-col gap-[20px]">
-            <DeliveryUnavailiable />
-            <ContactInfo data={contact}/>
-            <Delivery data={delivery}/>
-            <Payoff data={payoff}/>
-            <DeliveryTime data={deliveryTime}/>
+            {
+                deliveryAvailiable
+            }
+            <ContactForm data={contact}/>
+            <DeliveryForm data={delivery}/>
+            <PayoffForm data={payoff}/>
+            <DeliveryTimeForm data={deliveryTime}/>
             <MakeOrder />
         </form>
     )

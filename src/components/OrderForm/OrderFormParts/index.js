@@ -1,17 +1,11 @@
 import {
-    ContactInfo,
-    Delivery,
-    Payoff,
-    DeliveryTime,
-    MakeOrder,
-    DeliveryUnavailiable
+    FormItemContainer,
+    FormItem,
+    CheckBox
 } from './OrderFormParts';
 
 export {
-    ContactInfo,
-    Delivery,
-    Payoff,
-    DeliveryTime,
-    MakeOrder,
-    DeliveryUnavailiable
+    FormItemContainer,
+    FormItem,
+    CheckBox
 }

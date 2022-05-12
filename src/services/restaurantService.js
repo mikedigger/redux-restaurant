@@ -120,55 +120,81 @@ export default class RestaurantService {
                 this._generateFormInput('contact', "Телефон*", { required: true }),
             ],
 
-            delivery: {
-                tabs: [
-                    this._generateTab('delivery-delivery', "Доставка"),
-                    this._generateTab('delivery-pickup', "Самовивіз", true),
-                ],
+            delivery: [
+                {
+                    title: 'Доставка',
+                    inputs: [
+                        this._generateFormInput('delivery', "Вкажіть вулицю*", { required: true }),
+                        this._generateFormInput('delivery', "Номер будинку*", { inputType: 'number' }),
+                        this._generateFormInput('delivery', "Номер квартири/офісу", { inputType: 'number' }),
+                        this._generateFormInput('delivery', "Підїзд", { inputType: 'number' }),
+                        this._generateFormInput('delivery', "Поверх", { inputType: 'number' }),
+                        this._generateFormInput('delivery', "Коментар")
+                    ]
+                },
+                { // pickup
+                    title: 'Самовивіз',
+                    inputs: [
+                        this._generateDropdownItem('Університетська, 1'),
+                        this._generateDropdownItem('Площа Ринок, 1'),
+                        this._generateDropdownItem('Кульпарківська, 500'),
+                        this._generateDropdownItem('Червоної калини, 88')
+                    ]
+                }
+            ],
 
-                delivery: [
-                    this._generateFormInput('delivery', "Вкажіть вулицю*", { required: true }),
-                    this._generateFormInput('delivery', "Номер будинку*", { inputType: 'number' }),
-                    this._generateFormInput('delivery', "Номер квартири/офісу", { inputType: 'number' }),
-                    this._generateFormInput('delivery', "Підїзд", { inputType: 'number' }),
-                    this._generateFormInput('delivery', "Поверх", { inputType: 'number' }),
-                    this._generateFormInput('delivery', "Коментар")
-                ],
 
-                pickup: [
-                    this._generateDropdownItem('Університетська, 1'),
-                    this._generateDropdownItem('Площа Ринок, 1'),
-                    this._generateDropdownItem('Кульпарківська, 500'),
-                    this._generateDropdownItem('Червоної калини, 88')
-                ]
-            },
-
-            payoff: {
-                tabs: [
-                    this._generateTab('payoff', "Готівка", true),
-                    this._generateTab('payoff', "Картка"),
-                    this._generateTab('payoff', "Онлайн"),
-                ],
-                inputs: [
-                    this._generateFormInput('payoff', "Решта з"),
-                ]
-            },
+            payoff: [
+                {
+                    title: 'Готівка',
+                    inputs: [
+                        this._generateFormInput('payoff', "Решта з"),
+                    ]
+                },
+                {
+                    title: 'Онлайн',
+                    inputs: [
+                        this._generateFormInput('contact', "Номер картки*", { required: true }),
+                        this._generateFormInput('contact', "Термін дії*", { required: true }),
+                        this._generateFormInput('contact', "cvv*", { required: true }),
+                    ]
+                },
+                {
+                    title: 'Картка',
+                    inputs: []
+                }
+            ],
 
             deliveryTime: {
+
                 tabs: [
-                    this._generateTab('deliveryTime', "Якнайшвидше", true),
-                    this._generateTab('deliveryTime', "Точний час"),
+                    {
+                        title: 'Якнайшвидше',
+                        inputs: [
+                            this._generateFormInput('deliveryTime', "Кількість осіб", { inputType: 'number' }),
+                        ]
+                    },
+
+                    {
+                        title: 'Точний час',
+                        inputs: [
+                            this._generateFormInput('deliveryTime', "Вкажіть час"),
+                            this._generateFormInput('deliveryTime', "Кількість осіб", { inputType: 'number' })
+                        ]
+                    }
                 ],
-                inputs: [
-                this._generateFormInput('deliveryTime', "Вкажіть час"),
-                this._generateFormInput('deliveryTime', "Кількість осіб", { inputType: 'number' }),
-    
-                ],
-                checkboxes: [
-                this._generateFormInput('deliveryTime', "Так", { inputType: 'checkbox' }),
-                this._generateFormInput('deliveryTime', "Ні", { inputType: 'checkbox' }),
-                ]
+
+                checkboxes: {
+                    title: 'Передзвонити ?',
+                    checkboxItems: [
+                        this._generateFormInput('deliveryTime', "Так", { inputType: 'checkbox' }),
+                        this._generateFormInput('deliveryTime', "Ні", { inputType: 'checkbox' }),
+                    ]
+                }
+
+
             }
+
         }
     }
 }

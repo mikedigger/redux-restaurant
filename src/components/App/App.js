@@ -34,7 +34,7 @@ const App = ({ restaurantService, dishesLoaded, loadAddToOrder }) => {
         <div className='h-screen flex flex-col'>
             <Header />
             <Routes>
-                <Route
+                {/* <Route
                     path='/'
                     element={<MainPage />} />
                 <Route
@@ -42,16 +42,17 @@ const App = ({ restaurantService, dishesLoaded, loadAddToOrder }) => {
                     element={<CartPage />} />
                 <Route
                     path='/products/:id'
-                    element={<ProductCardPage />} />
+                    element={<ProductCardPage />} /> */}
                 <Route
-                    path='/ordering'
+                    path='/'
+                    // path='/ordering'
                     element={<OrderindPage />} />
-                <Route
+                {/* <Route
                     path='/delivery'
                     element={<DeliveryPage />} />
                 <Route
                     path='/discount'
-                    element={<DiscountPage />} />
+                    element={<DiscountPage />} /> */}
             </Routes>
             <Footer />
         </div>
