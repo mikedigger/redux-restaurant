@@ -19,7 +19,9 @@ const MainPage = () => {
             <DishListSection
                 title="М'ясні страви"
                 type='meat'/>
-            <CafeSection />
+            <div className="relative tab:bottom-[-60px] z-[3] ">
+                <CafeSection />
+            </div>
             <ContactsSection />
         </main>
     )

@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+
+import spinerImg from '../../../assets/images/spinner.gif'
 
 const Spinner = () => {
     return (
-        <div>Spinner</div>
+        <div className="flex items-center justify-center h-full bg-base-fill flex-col gap-[20px]">
+            <div className="h-[100px] w-[100px]">
+                <img src={spinerImg} alt="Spinner" />
+            </div>
+            <div className="text-white text-[18px] font-medium">Зачекайте будь ласка</div>
+        </div>
     )
 }
 

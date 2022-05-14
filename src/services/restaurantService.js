@@ -88,7 +88,6 @@ export default class RestaurantService {
         }
     }
 
-
     getCafeDishes = () => {
         return [
             { icon: 'onion', descr: 'найсвіжіші продукти' },
@@ -99,29 +98,30 @@ export default class RestaurantService {
     }
 
     getDishes = () => {
+        
         return [
-            this._generateDish({ title: 'Ягня', type: 'meat' }),
-            this._generateDish({ title: 'Баран', type: 'meat' }),
-            this._generateDish({ title: 'Гусак', type: 'meat' }),
-            this._generateDish({ title: 'Фарширований осетер', type: 'meat' }),
-            this._generateDish({ title: 'Запечений фазан', type: 'meat' }),
-            this._generateDish({ title: 'Запечений заяць', type: 'meat' }),
+            { title: 'Ягня', type: 'cold' },
+            { title: 'Баран', type: 'cold' },
+            { title: 'Гусак', type: 'cold' },
+            { title: 'Фарширований осетер', type: 'cold' },
+            { title: 'Запечений фазан', type: 'cold' },
+            { title: 'Запечений заяць', type: 'cold' },
 
-            this._generateDish({ title: 'Ягня', type: 'cold' }),
-            this._generateDish({ title: 'Баран', type: 'cold' }),
-            this._generateDish({ title: 'Гусак', type: 'cold' }),
-            this._generateDish({ title: 'Фарширований осетер', type: 'cold' }),
-            this._generateDish({ title: 'Запечений фазан', type: 'cold' }),
-            this._generateDish({ title: 'Запечений заяць', type: 'cold' }),
+            { title: 'Ягня', type: 'hot' },
+            { title: 'Баран', type: 'hot' },
+            { title: 'Гусак', type: 'hot' },
+            { title: 'Фарширований осетер', type: 'hot' },
+            { title: 'Запечений фазан', type: 'hot' },
+            { title: 'Запечений заяць', type: 'hot' },
 
-            this._generateDish({ title: 'Ягня', type: 'hot' }),
-            this._generateDish({ title: 'Баран', type: 'hot' }),
-            this._generateDish({ title: 'Гусак', type: 'hot' }),
-            this._generateDish({ title: 'Фарширований осетер', type: 'hot' }),
-            this._generateDish({ title: 'Запечений фазан', type: 'hot' }),
-            this._generateDish({ title: 'Запечений заяць', type: 'hot' }),
+            { title: 'Ягня', type: 'meat' },
+            { title: 'Баран', type: 'meat' },
+            { title: 'Гусак', type: 'meat' },
+            { title: 'Фарширований осетер', type: 'meat' },
+            { title: 'Запечений фазан', type: 'meat' },
+            { title: 'Запечений заяць', type: 'meat' },
 
-        ]
+        ].map(({ title, type }) => this._generateDish({ title, type }))
     }
 
     getFormData = () => {
@@ -211,12 +211,12 @@ export default class RestaurantService {
 
     getDropdownData = () => {
         return [
-                'У наших курєрів завжди має бути здача',
-                'Вам щось недовезли?',
-                'Не сподобався продукт?',
-                'Якщо зявилися зауваження',
-                'Оплата Visa, MasterCart'
-            ].map(item => this._generateConditionsDropdownItem(item))
+            'У наших курєрів завжди має бути здача',
+            'Вам щось недовезли?',
+            'Не сподобався продукт?',
+            'Якщо зявилися зауваження',
+            'Оплата Visa, MasterCart'
+        ].map(item => this._generateConditionsDropdownItem(item))
 
     }
 

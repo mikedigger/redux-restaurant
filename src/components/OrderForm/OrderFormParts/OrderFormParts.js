@@ -25,7 +25,7 @@ const FormItemContainer = ({ children, title }) => {
 
 const CheckBox = ({ children, inputName, containerMod, mod }) => {
 
-    const classes = `absolute w-full h-full top-0 left-0 rounded-circle overflow-hidden outline-[2px] outline outline-white outline-offset-1 peer-checked:!bg-accent peer-checked:!outline-accent pointer-events-none ${mod}`;
+    const classes = `absolute w-full h-full top-0 left-0 rounded-circle overflow-hidden outline-[2px] outline outline-white outline-offset-1 peer-checked:!outline-accent pointer-events-none ${mod}`;
 
     return (
         <div className="flex items-center gap-[10px]">

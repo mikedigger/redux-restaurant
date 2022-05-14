@@ -15,7 +15,7 @@ const ContactsSection = () => {
                             noGreenStrip
                             title='Контакти' />
                     </header>
-                    <div className="pt-[15px] pb-[30px] relative mb-[30px] before:absolute before:left-0 before:w-full before:h-[1px] after:absolute after:left-0 after:w-full after:h-[1px] before:bg-contact-grad after:contact-grad before:top-0 after:bottom-0">
+                    <div className="pt-[15px] pb-[30px] relative mb-[30px] before:absolute before:left-0 before:w-full before:h-[1px] after:absolute after:left-0 after:w-full after:h-[1px] before:bg-contact-grad after:bg-contact-grad before:top-0 after:bottom-0">
                         <div className="flex gap-[17px] mt-[25px] ;first:mt-0">
                             <i className="icon-location text-[24px] text-accent"></i>
                             <div>
@@ -51,16 +51,16 @@ const ContactsSection = () => {
                         <div className="flex items-center justify-center">
                             <span className="font-semibold text-[16px] text-white mr-[25px]">Ми у соцмережах: </span>
                             {
-                                // socialsData.map(({ icon, ref }, idx) => {
-                                //     return (
-                                //         <a
-                                //             key={idx}
-                                //             href={ref}
-                                //             className="text-[19px] duration-300 hover:text-accent ml-[10px] first:ml-0">
-                                //             <i className={`icon-${icon} contacts-social-icon`}></i>
-                                //         </a>
-                                //     )
-                                // })
+                                ['facebook', 'ins', 'vk', 'yt'].map((item, idx) => {
+                                    return (
+                                        <a
+                                            key={idx}
+                                            // href={ref}
+                                            className="text-[19px] duration-300 hover:text-accent ml-[10px] first:ml-0">
+                                            <i className={`icon-${item} contacts-social-icon`}></i>
+                                        </a>
+                                    )
+                                })
                             }
                         </div>
                     </footer>

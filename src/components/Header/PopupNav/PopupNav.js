@@ -2,7 +2,7 @@ import React from 'react';
 
 const PopupNav = ({ burgerActive }) => {
 
-    const navClasses = 'z-[3] fixed top-0 left-0 w-full h-full flex invisible items-center opacity-0 duration-300';
+    const navClasses = 'z-[4] fixed top-0 left-0 w-full h-full flex invisible items-center opacity-0 duration-300';
     const navActiveClasses = 'opacity-100 !visible bg-base-fill'
 
     return (
@@ -20,7 +20,7 @@ const PopupNav = ({ burgerActive }) => {
                                         </a>
                                     </li>
                                 )
-                            } )
+                            })
                         }
                     </ul>
                 </nav>

@@ -7,11 +7,11 @@ import Spinner from '../common/Spinner';
 const CafeSection = ({ restaurantService }) => {
 
     const [data, setData] = useState([]);
-
+    
     useEffect(() => {
         const data = restaurantService.getCafeDishes();
         setData(data)
-    })
+    }, [restaurantService])
 
     if (!data) return <Spinner />
 

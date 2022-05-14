@@ -14,7 +14,6 @@ html {
 }
 
 body {
-	min-width: 375px;
 	color: #cfcfcf;
 	font-size: 12px;
 	font-family: Gilroy, Arial, Helvetica, sans-serif;
@@ -29,39 +28,4 @@ body {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 15px;
-}
-
-/* .img-wrap {
-	overflow: hidden;
-}
-
-.img-wrap > source,
-.img-wrap > img {
-	display: block;
-
-	width: 100%;
-	height: 100%;
-
-	object-fit: contain;
-} */
-
-.h2,
-.h3 {
-	font-weight: 700;
-	color: var(--accent-color-light);
-}
-
-.h2 {
-	font-size: 20px;
-	text-transform: uppercase;
-}
-
-.h3 {
-	font-size: 20px;
-}
-
-@media screen and (min-width: 1199.98px) {
-	.h2 {
-		font-size: 32px;
-	}
 }

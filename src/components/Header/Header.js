@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import { connect } from 'react-redux';
 
@@ -13,6 +13,12 @@ const Header = () => {
 
     const [burgerActive, setBurgerActive] = useState(false);
 
+    if (burgerActive) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+
     return (
         <header
             id='header'
@@ -20,7 +26,6 @@ const Header = () => {
             <div className="container">
                 <div className="flex items-center justify-between flex-wrap tab:gap-[70px]">
                     <Hamburger
-                        mod='tab:hidden z-[4]'
                         burgerActive={burgerActive}
                         setBurgerActive={setBurgerActive} />
                     <Logo mod='tab:order-none' />
@@ -33,7 +38,7 @@ const Header = () => {
                         <SetDeliveryAddress mod='des:max-w-[555px] w-full' />
                         <TelContact mod='hidden des:flex flex-grow flex-shrink-0' />
                     </div>
-                    <PopupNav burgerActive={burgerActive}/>
+                    <PopupNav burgerActive={burgerActive} />
                 </div>
             </div>
         </header>

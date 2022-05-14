@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Hamburger = ({mod, burgerActive, setBurgerActive}) => {
+const Hamburger = ({ burgerActive, setBurgerActive }) => {
 
     let barClasses = 'block h-[4px] w-[25px] bg-accent duration-300 rounded-[5px]';
 
@@ -12,7 +12,7 @@ const Hamburger = ({mod, burgerActive, setBurgerActive}) => {
         <>
             <button
                 onClick={() => setBurgerActive((burgerActive) => !burgerActive)}
-                className={`w-[40px] flex flex-col justify-center items-center cursor-pointer z-[4] ${mod}`}>
+                className={`w-[40px] flex flex-col justify-center items-center cursor-pointer z-[5] tab:hidden`}>
                 <span
                     className={burgerActive ? `${barClasses} ${bar1ActiveClasses}` : `${barClasses} translate-y-[-4px]`}>
                 </span>

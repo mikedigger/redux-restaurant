@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 
 import { withRestaurantService } from '../hoc';
 import { dishesLoaded, loadAddToOrder } from '../../actions';
-import { compose } from 'redux';
 
 
 import {
@@ -34,7 +33,7 @@ const App = ({ restaurantService, dishesLoaded, loadAddToOrder }) => {
         <div className='h-screen flex flex-col'>
             <Header />
             <Routes>
-                {/* <Route
+                <Route
                     path='/'
                     element={<MainPage />} />
                 <Route
@@ -42,16 +41,15 @@ const App = ({ restaurantService, dishesLoaded, loadAddToOrder }) => {
                     element={<CartPage />} />
                 <Route
                     path='/products/:id'
-                    element={<ProductCardPage />} /> */}
-                {/* <Route
-                    path='/ordering'
-                    element={<OrderindPage />} /> */}
-                {/* <Route
-                    path='/conditions'
-                    element={<ConditionsPage />} /> */}
+                    element={<ProductCardPage />} />
                 <Route
-                    path='/'
-                    // path='/promotion'
+                    path='/ordering'
+                    element={<OrderindPage />} />
+                <Route
+                    path='/conditions'
+                    element={<ConditionsPage />} />
+                <Route
+                    path='/promotion'
                     element={<PromotionPage />} />
             </Routes>
             <Footer />
