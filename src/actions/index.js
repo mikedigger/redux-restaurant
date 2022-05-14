@@ -17,6 +17,7 @@ const arrUpdate = (arr, insertIndex, changes) => {
 }
 
 const getTargetDishInfo = (arr, id) => {
+    console.log()
     const target = arr.find(dish => dish.id === id);
     const targetDishIndex = arr.indexOf(target);
     return [
@@ -192,44 +193,34 @@ const fetchFormData = (data) => {
 
 }
 
-const toggleFormTabs = (params) => {
-    const { value, active, data, id, formData, tabs } = params;
+const fetchAcordionData = (data) => {
+    return {
+        type: 'FETCH_ACORDION_DATA',
+        payload: data
+    }
+}
 
-    // tabs
-    const [tab, tabId] = getTargetDishInfo(tabs, id); // отримати сам таб та його id серед табів розділу
-    const newTabs = arrUpdate(data, tabId, { ...tab, active: false }); // оновити масив табів розділу
+const openAccordionItem = (params) => {
 
+    const { id, acordion } = params;
+    const [target, targetIndex] = getTargetDishInfo(acordion, id);
 
-    // як зняти активний стан із інших табів ?
-    // як оновити масив елементів форм
+    const changes = {
+        ...target,
+        active: !target.active
 
-    // масив елементів форм
-    /** 
-     * {
-        
-        contact: [{}]
-        delivery: [
-            tabs: [{}]
-            delivery: [{}]
-            pickup: [{}]
-        ]
-        payoff: [
-            tabs: [{}]
-            input: [{}]
-        ]
-        deliveryTime: [
-            tabs: [{}]
-            inputs: [{}]
-            checkboxes: [{}]
-        ]
-     * }
-     * 
-     * 
-    */
+    }
 
     return {
-        type: 'TOGGLE_FORM_TABS',
-        payload: newTabs
+        type: 'OPEN_ACORDION_ITEM',
+        payload: arrUpdate(acordion, targetIndex, changes)
+    }
+}
+
+const promotionLoaded = (data) => {
+    return {
+        type: 'PROMOTION_LOADED',
+        payload: data
     }
 }
 
@@ -244,5 +235,10 @@ export {
     showDishInfo,
     moveFromOrderToCart,
     loadAddToOrder,
-    fetchFormData
+    fetchFormData,
+
+    fetchAcordionData,
+    openAccordionItem,
+
+    promotionLoaded
 }

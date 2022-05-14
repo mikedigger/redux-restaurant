@@ -4,67 +4,8 @@ const initialState = {
     activeDish: {},
     addToOrder: [],
     minimalOrder: 1500,
-    // form: {}
-    // form: {
-
-    //     contacts: {
-    //         name: '',
-    //         phone: 0
-    //     },
-
-    //     delivery: {
-    //         tabs: {
-    //             companyDelivery: true,
-    //             userDelivery: false
-    //         },
-    //         companyDelivery: {
-    //             street: '',
-    //             streetNumber: 0,
-    //             flatNumber: 0,
-    //             entrance: 0,
-    //             floor: 0,
-    //             comment: ''
-    //         },
-    //         userDelivery: {
-    //             address: ''
-    //         }
-    //     },
-
-    //     payoff: {
-    //         tabs: {
-    //             cash: true,
-    //             card: false,
-    //             online: false
-    //         },
-    //         cash: {
-    //             rest: 0
-    //         },
-    //         online: {
-    //             number: 0,
-    //             expires: '',
-    //             cvv: 0
-    //         },
-    //         ChannelMergerNode: {}
-    //     },
-
-    //     time: {
-    //         tabs: {
-    //             quickly: true,
-    //             toTime: false
-    //         },
-    //         quickly: {
-    //             setTime: '',
-    //             personNumber: 0,
-    //             call: false
-    //         }
-    //     },
-
-    //     conditionsAgreement: false
-
-    //     // get: '', // delivery, pickup
-    //     // pay: '', // cash, card, online
-    //     // time: '', // soon, toTime
-    // }
+    acordion: [],
+    promotion: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -129,6 +70,24 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 formData: payload
+            }
+
+        case 'FETCH_ACORDION_DATA':
+            return {
+                ...state,
+                acordion: payload
+            }
+        
+        case 'OPEN_ACORDION_ITEM':
+            return {
+                ...state,
+                acordion: payload
+            }
+        
+        case 'PROMOTION_LOADED':
+            return {
+                ...state,
+                promotion: payload
             }
 
         default:

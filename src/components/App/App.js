@@ -13,8 +13,8 @@ import {
     CartPage,
     ProductCardPage,
     OrderindPage,
-    DeliveryPage,
-    DiscountPage
+    ConditionsPage,
+    PromotionPage
 } from '../pages';
 
 import Header from '../Header';
@@ -43,16 +43,16 @@ const App = ({ restaurantService, dishesLoaded, loadAddToOrder }) => {
                 <Route
                     path='/products/:id'
                     element={<ProductCardPage />} /> */}
+                {/* <Route
+                    path='/ordering'
+                    element={<OrderindPage />} /> */}
+                {/* <Route
+                    path='/conditions'
+                    element={<ConditionsPage />} /> */}
                 <Route
                     path='/'
-                    // path='/ordering'
-                    element={<OrderindPage />} />
-                {/* <Route
-                    path='/delivery'
-                    element={<DeliveryPage />} />
-                <Route
-                    path='/discount'
-                    element={<DiscountPage />} /> */}
+                    // path='/promotion'
+                    element={<PromotionPage />} />
             </Routes>
             <Footer />
         </div>

@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     screens: {
       'mob': '480px',
+      'sm': '640px',
       'tab': '768px',
       'des': '1024px',
       'des-m': '1200px',
@@ -31,7 +32,7 @@ module.exports = {
         'contact-grad': 'linear-gradient(90deg, rgba(225, 225, 225, 0) 0, rgba(255, 255, 255, 0.25) 25%, rgba(255, 255, 255, 0.25) 75%, rgba(255, 255, 255, 0) 100%)',
         'cafe-bg': 'linear-gradient(90deg, rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%), url(/src/assets/images/cafe-bg.png)',
         'section-grad': 'linear-gradient(90deg, rgba(225, 225, 225, .25) 0, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, 0) 100%)',
-        'cart-grad': 'linear-gradient(90deg, rgba(225, 225, 225, 0.25) 0, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0) 100%)'
+        'cart-grad': 'linear-gradient(90deg, rgba(225, 225, 225, 0.25) 0, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0) 100%)',
       }
     }
   },

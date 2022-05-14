@@ -1,4 +1,5 @@
 import dishImg from './dishImg.png';
+import promotionImg from './promotionImg.png';
 
 export default class RestaurantService {
 
@@ -47,6 +48,47 @@ export default class RestaurantService {
         }
     }
 
+    _generateFormInput = (type, placeholder, rest = {}) => {
+
+        const { required = false, inputType = 'text' } = rest;
+
+        return {
+            type,
+            id: this._id++,
+            placeholder,
+            inputType,
+            required,
+        }
+    }
+
+    _generateDropdownItem = (value) => {
+        return {
+            type: 'pickup',
+            value,
+            id: this._id++,
+        }
+    }
+
+    _generateConditionsDropdownItem = (title) => {
+        return {
+            id: this._id++,
+            title,
+            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, velit.',
+            active: false
+        }
+    }
+
+    _generatePromotionItem = (title) => {
+        return {
+            id: this._id++,
+            title,
+            img: promotionImg,
+            text: 'У Харкові виготовили рекордний для України хот-дог завдовжки 216 см. Щоб винести хот-дог вагою 16 кг на сцену, знадобилася допомога шістьох людей. Хот-дог завдовжки 216 сантиметрів представили напередодні, 19 листопада, у Харкові, встановивши цим національний рекорд України в категорії "Кулінарне мистецтво", повідомляє "АТН".',
+            expires: 'до 31 липня'
+        }
+    }
+
+
     getCafeDishes = () => {
         return [
             { icon: 'onion', descr: 'найсвіжіші продукти' },
@@ -80,37 +122,6 @@ export default class RestaurantService {
             this._generateDish({ title: 'Запечений заяць', type: 'hot' }),
 
         ]
-    }
-
-
-    _generateFormInput = (type, placeholder, rest = {}) => {
-
-        const { required = false, inputType = 'text' } = rest;
-
-        return {
-            type,
-            id: this._id++,
-            placeholder,
-            inputType,
-            required,
-        }
-    }
-
-    _generateDropdownItem = (value) => {
-        return {
-            type: 'pickup',
-            value,
-            id: this._id++,
-        }
-    }
-
-    _generateTab = (type, value, active = false) => {
-        return {
-            id: this._id++,
-            type,
-            value,
-            active
-        }
     }
 
     getFormData = () => {
@@ -196,5 +207,30 @@ export default class RestaurantService {
             }
 
         }
+    }
+
+    getDropdownData = () => {
+        return [
+                'У наших курєрів завжди має бути здача',
+                'Вам щось недовезли?',
+                'Не сподобався продукт?',
+                'Якщо зявилися зауваження',
+                'Оплата Visa, MasterCart'
+            ].map(item => this._generateConditionsDropdownItem(item))
+
+    }
+
+    getPromotionData = () => {
+        return [
+            'Смачні хот-доги',
+            'Разом смачніше',
+            'Сирний бортик',
+            'Для вегетаріанців',
+            'Разом смачніше',
+            'Сирний бортик',
+            'Для вегетаріанців',
+            'Сирний бортик',
+            'Для вегетаріанців'
+        ].map(item => this._generatePromotionItem(item))
     }
 }

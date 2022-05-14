@@ -26,7 +26,7 @@ const OrderForm = ({ restaurantService, fetchFormData, formData }) => {
 
     const currentHour = new Date().getHours();
 
-    const deliveryAvailiable = currentHour > 21.5 || currentHour < 7 ? <DeliveryUnavailiable /> : null
+    const deliveryAvailiable = currentHour > 21.5 || currentHour < 8.5 ? <DeliveryUnavailiable /> : null
 
     return (
         <form
