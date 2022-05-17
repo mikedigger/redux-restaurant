@@ -7,7 +7,6 @@ import { withRestaurantService } from '../hoc';
 import { addToCart, dishAmountIncrease, dishAmountDecrease, showDishInfo } from '../../actions';
 import { compose } from 'redux';
 
-
 import DishCard from '../DishCard';
 
 import 'swiper/css';
