@@ -69,7 +69,7 @@ export default class RestaurantService {
         }
     }
 
-    _generateConditionsDropdownItem = (title) => {
+    _generateAccordionItem = (title) => {
         return {
             id: this._id++,
             title,
@@ -88,149 +88,166 @@ export default class RestaurantService {
         }
     }
 
-    getCafeDishes = () => {
-        return [
-            { icon: 'onion', descr: 'найсвіжіші продукти' },
-            { icon: 'flash', descr: 'швидка доставка' },
-            { icon: 'chef', descr: 'найкращі кухарі' },
-            { icon: 'onion', descr: 'найсвіжіші продукти' }
-        ]
-    }
-
     getDishes = () => {
-        
-        return [
-            { title: 'Ягня', type: 'cold' },
-            { title: 'Баран', type: 'cold' },
-            { title: 'Гусак', type: 'cold' },
-            { title: 'Фарширований осетер', type: 'cold' },
-            { title: 'Запечений фазан', type: 'cold' },
-            { title: 'Запечений заяць', type: 'cold' },
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // if (Math.random() > 0.25) {
+                resolve(
+                    [
+                        { title: 'Ягня', type: 'cold' },
+                        { title: 'Баран', type: 'cold' },
+                        { title: 'Гусак', type: 'cold' },
+                        { title: 'Фарширований осетер', type: 'cold' },
+                        { title: 'Запечений фазан', type: 'cold' },
+                        { title: 'Запечений заяць', type: 'cold' },
 
-            { title: 'Ягня', type: 'hot' },
-            { title: 'Баран', type: 'hot' },
-            { title: 'Гусак', type: 'hot' },
-            { title: 'Фарширований осетер', type: 'hot' },
-            { title: 'Запечений фазан', type: 'hot' },
-            { title: 'Запечений заяць', type: 'hot' },
+                        { title: 'Ягня', type: 'hot' },
+                        { title: 'Баран', type: 'hot' },
+                        { title: 'Гусак', type: 'hot' },
+                        { title: 'Фарширований осетер', type: 'hot' },
+                        { title: 'Запечений фазан', type: 'hot' },
+                        { title: 'Запечений заяць', type: 'hot' },
 
-            { title: 'Ягня', type: 'meat' },
-            { title: 'Баран', type: 'meat' },
-            { title: 'Гусак', type: 'meat' },
-            { title: 'Фарширований осетер', type: 'meat' },
-            { title: 'Запечений фазан', type: 'meat' },
-            { title: 'Запечений заяць', type: 'meat' },
+                        { title: 'Ягня', type: 'meat' },
+                        { title: 'Баран', type: 'meat' },
+                        { title: 'Гусак', type: 'meat' },
+                        { title: 'Фарширований осетер', type: 'meat' },
+                        { title: 'Запечений фазан', type: 'meat' },
+                        { title: 'Запечений заяць', type: 'meat' },
 
-        ].map(({ title, type }) => this._generateDish({ title, type }))
+                    ].map(({ title, type }) => this._generateDish({ title, type }))
+                )
+                // } else {
+                //     reject(new Error('something bad happened'))
+                // }
+
+
+            }, 700)
+        })
+
     }
 
-    getFormData = () => {
-        return {
-            contact: [
-                this._generateFormInput('contact', "Ім'я*", { required: true }),
-                this._generateFormInput('contact', "Телефон*", { required: true }),
-            ],
+    getForm = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({
+                    contact: [
+                        this._generateFormInput('contact', "Ім'я*", { required: true }),
+                        this._generateFormInput('contact', "Телефон*", { required: true }),
+                    ],
 
-            delivery: [
-                {
-                    title: 'Доставка',
-                    inputs: [
-                        this._generateFormInput('delivery', "Вкажіть вулицю*", { required: true }),
-                        this._generateFormInput('delivery', "Номер будинку*", { inputType: 'number' }),
-                        this._generateFormInput('delivery', "Номер квартири/офісу", { inputType: 'number' }),
-                        this._generateFormInput('delivery', "Підїзд", { inputType: 'number' }),
-                        this._generateFormInput('delivery', "Поверх", { inputType: 'number' }),
-                        this._generateFormInput('delivery', "Коментар")
-                    ]
-                },
-                { // pickup
-                    title: 'Самовивіз',
-                    inputs: [
-                        this._generateDropdownItem('Університетська, 1'),
-                        this._generateDropdownItem('Площа Ринок, 1'),
-                        this._generateDropdownItem('Кульпарківська, 500'),
-                        this._generateDropdownItem('Червоної калини, 88')
-                    ]
-                }
-            ],
+                    delivery: [
+                        {
+                            title: 'Доставка',
+                            inputs: [
+                                this._generateFormInput('delivery', "Вкажіть вулицю*", { required: true }),
+                                this._generateFormInput('delivery', "Номер будинку*", { inputType: 'number' }),
+                                this._generateFormInput('delivery', "Номер квартири/офісу", { inputType: 'number' }),
+                                this._generateFormInput('delivery', "Підїзд", { inputType: 'number' }),
+                                this._generateFormInput('delivery', "Поверх", { inputType: 'number' }),
+                                this._generateFormInput('delivery', "Коментар")
+                            ]
+                        },
+                        {
+                            title: 'Самовивіз',
+                            inputs: [
+                                this._generateDropdownItem('Університетська, 1'),
+                                this._generateDropdownItem('Площа Ринок, 1'),
+                                this._generateDropdownItem('Кульпарківська, 500'),
+                                this._generateDropdownItem('Червоної калини, 88')
+                            ]
+                        }
+                    ],
 
 
-            payoff: [
-                {
-                    title: 'Готівка',
-                    inputs: [
-                        this._generateFormInput('payoff', "Решта з"),
-                    ]
-                },
-                {
-                    title: 'Онлайн',
-                    inputs: [
-                        this._generateFormInput('contact', "Номер картки*", { required: true }),
-                        this._generateFormInput('contact', "Термін дії*", { required: true }),
-                        this._generateFormInput('contact', "cvv*", { required: true }),
-                    ]
-                },
-                {
-                    title: 'Картка',
-                    inputs: []
-                }
-            ],
+                    payoff: [
+                        {
+                            title: 'Готівка',
+                            inputs: [
+                                this._generateFormInput('payoff', "Решта з"),
+                            ]
+                        },
+                        {
+                            title: 'Онлайн',
+                            inputs: [
+                                this._generateFormInput('contact', "Номер картки*", { required: true }),
+                                this._generateFormInput('contact', "Термін дії*", { required: true }),
+                                this._generateFormInput('contact', "cvv*", { required: true }),
+                            ]
+                        },
+                        {
+                            title: 'Картка',
+                            inputs: []
+                        }
+                    ],
 
-            deliveryTime: {
+                    deliveryTime: {
 
-                tabs: [
-                    {
-                        title: 'Якнайшвидше',
-                        inputs: [
-                            this._generateFormInput('deliveryTime', "Кількість осіб", { inputType: 'number' }),
-                        ]
-                    },
+                        tabs: [
+                            {
+                                title: 'Якнайшвидше',
+                                inputs: [
+                                    this._generateFormInput('deliveryTime', "Кількість осіб", { inputType: 'number' }),
+                                ]
+                            },
 
-                    {
-                        title: 'Точний час',
-                        inputs: [
-                            this._generateFormInput('deliveryTime', "Вкажіть час"),
-                            this._generateFormInput('deliveryTime', "Кількість осіб", { inputType: 'number' })
-                        ]
+                            {
+                                title: 'Точний час',
+                                inputs: [
+                                    this._generateFormInput('deliveryTime', "Вкажіть час"),
+                                    this._generateFormInput('deliveryTime', "Кількість осіб", { inputType: 'number' })
+                                ]
+                            }
+                        ],
+
+                        checkboxes: {
+                            title: 'Передзвонити ?',
+                            checkboxItems: [
+                                this._generateFormInput('deliveryTime', "Так", { inputType: 'checkbox' }),
+                                this._generateFormInput('deliveryTime', "Ні", { inputType: 'checkbox' }),
+                            ]
+                        }
+
+
                     }
-                ],
 
-                checkboxes: {
-                    title: 'Передзвонити ?',
-                    checkboxItems: [
-                        this._generateFormInput('deliveryTime', "Так", { inputType: 'checkbox' }),
-                        this._generateFormInput('deliveryTime', "Ні", { inputType: 'checkbox' }),
-                    ]
-                }
-
-
-            }
-
-        }
+                })
+            }, 500)
+        })
     }
 
-    getDropdownData = () => {
-        return [
-            'У наших курєрів завжди має бути здача',
-            'Вам щось недовезли?',
-            'Не сподобався продукт?',
-            'Якщо зявилися зауваження',
-            'Оплата Visa, MasterCart'
-        ].map(item => this._generateConditionsDropdownItem(item))
+    getAccordion = () => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve([
+                    'У наших курєрів завжди має бути здача',
+                    'Вам щось недовезли?',
+                    'Не сподобався продукт?',
+                    'Якщо зявилися зауваження',
+                    'Оплата Visa, MasterCart'
+                ].map(item => this._generateAccordionItem(item)))
 
+            }, 300)
+        })
     }
 
     getPromotionData = () => {
-        return [
-            'Смачні хот-доги',
-            'Разом смачніше',
-            'Сирний бортик',
-            'Для вегетаріанців',
-            'Разом смачніше',
-            'Сирний бортик',
-            'Для вегетаріанців',
-            'Сирний бортик',
-            'Для вегетаріанців'
-        ].map(item => this._generatePromotionItem(item))
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(
+                    [
+                        'Смачні хот-доги',
+                        'Разом смачніше',
+                        'Сирний бортик',
+                        'Для вегетаріанців',
+                        'Разом смачніше',
+                        'Сирний бортик',
+                        'Для вегетаріанців',
+                        'Сирний бортик',
+                        'Для вегетаріанців'
+                    ].map(item => this._generatePromotionItem(item))
+                )
+            }, 300)
+        })
     }
 }

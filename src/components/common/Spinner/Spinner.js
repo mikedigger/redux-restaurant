@@ -1,5 +1,3 @@
-import React from 'react';
-
 import spinerImg from '../../../assets/images/spinner.gif'
 
 const Spinner = () => {

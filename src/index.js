@@ -1,16 +1,13 @@
-import React from 'react';
+
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import App from './components/App';
-import RestaurantServiceContext from './components/RestaurantServiceContext';
+import App from './App';
 import store from './store';
-import ErrorBoundry from './components/ErrorBoundry';
-import RestaurantService from './services/restaurantService';
-import './styles/index.css'
+import ErrorBoundry from './components/common/ErrorBoundry';
 
-const restaurantService = new RestaurantService();
+import './styles/index.css'
 
 
 ReactDOM
@@ -18,11 +15,9 @@ ReactDOM
   .render(
     <Provider store={store}>
       <ErrorBoundry>
-        <RestaurantServiceContext.Provider value={restaurantService}>
-          <Router>
-            <App />
-          </Router>
-        </RestaurantServiceContext.Provider >
+        <Router>
+          <App />
+        </Router>
       </ErrorBoundry>
     </Provider>
   )

@@ -1,13 +1,12 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from '../Button';
-
+import { routePath } from '../../../routing/routePath';
 
 const BackLink = ({txt, mod}) => {
     return (
         <Link
-            to='/'
+            to={routePath.root}
             className={`flex items-center gap-[10px] px-[15px] mb-[15px] tab:p-0 ${mod}`}>
             <Button mod='w-[25px] h-[25px] !rounded-circle'>
                 <i className="icon-arrow text-[16px] rotate-90 ml-[-3px]"></i>

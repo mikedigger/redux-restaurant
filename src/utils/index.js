@@ -1,5 +1,2 @@
-import compose from './compose';
-
-export {
-  compose
-};
+import changeState from './stateChange';
+export default changeState;
