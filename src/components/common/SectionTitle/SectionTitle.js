@@ -7,7 +7,7 @@ const SectionTitle = ({ title, mod, noGreenStrip }) => {
     {'pl-[10px] border-l-[4px] border-solid border-accent des:pl-[20px]': !noGreenStrip}
   )
   
-  return <h2 className={clazz}>{title}</h2>
+  return <h2 className={clazz}> {title} </h2>
 }
 
 export default SectionTitle;
